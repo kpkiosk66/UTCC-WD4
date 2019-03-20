@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type = "text/javascript">
+  //<![CDATA[
+  // from radioGroup.html
+
+  function fight(){
+      var score = 0;
+      var q1 = document.getElementsByName("q1");
+      var q2 = document.getElementsByName("q2");
+      var q3 = document.getElementsByName("q3");
+      var o1 = document.getElementById("o1");
+      var o2 = document.getElementById("o2");
+      var o3 = document.getElementById("o3");
+
+      if (q1[1].checked){
+          score++;
+          o1.innerHTML = " ";
+      }
+      else {
+        o1.innerHTML = "Wrong answer, real answer is B";
+      }
+
+      if (q2[0].checked){
+          score++;
+          o2.innerHTML = " ";
+      }
+        else {
+          o2.innerHTML = "Wrong answer, real answer is A";
+        }
+
+      if (q3[2].checked){
+          score++;
+          o3.innerHTML = " ";
+      }
+        else {
+          o3.innerHTML = "Wrong answer, real answer is C";
+        }
+
+
+      var output = document.getElementById("output");
+      var response = "<h2>";
+      response += score + "<\/h2> \n";
+      output.innerHTML = response;
+      } // end function
+      //]]>
+    </script>
+
+    <link rel = "stylesheet" type = "text/css" href = "textBoxes.css" />
+  </head>
+
+    <body>
+  <h1>Dis is da test</h1>
+  <form action = "">
+  <fieldset>
+  <input type = "radio" name = "q1"
+  id = "radSpoon" value = "0"
+  checked = "checked" />
+  <label>a0</label>
+  <input type = "radio" name = "q1"
+  id = "radFlower" value = "0" />
+  <label>a1</label>
+  <input type = "radio" name = "q1"
+  id = "radNoodle" value = "1" />
+  <label>a2</label>
+
+  <label id = "o1"></label>
+
+  </fieldset>
+
+  <fieldset>
+  <input type = "radio" name = "q2"
+    id = "radSpoon" value = "0"
+    checked = "checked" />
+  <label>a1</label>
+  <input type = "radio" name = "q2"
+    id = "radFlower" value = "1" />
+  <label>a2</label>
+  <input type = "radio" name = "q2"
+    id = "radNoodle" value = "0" />
+  <label>a3</label>
+  <label id = "o2"></label>
+
+  </fieldset>
+
+  <fieldset>
+    <input type = "radio" name = "q3"
+      id = "radSpoon" value = "0"
+      checked = "checked" />
+    <label>a1</label>
+    <input type = "radio" name = "q3"
+      id = "radFlower" value = "1" />
+    <label>a2</label>
+    <input type = "radio" name = "q3"
+      id = "radNoodle" value = "0" />
+    <label>a3</label>
+    <label id = "o3"></label>
+
+  </fieldset>
+
+  <button type = "button" onclick = "fight()">
+    Submit
+  </button>
+
+  </form>
+  <div id = "output"></div>
+  </body>
+</html>
